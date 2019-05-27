@@ -8,4 +8,4 @@ I am trying to get permission to distribute the image and audio files along with
 
 When I first wrote this, I wrote it as a standalone wsgi program that could serve the audio, image and html files without needing an external webserver. This is probably the easiest way to run it, but it is slow since WSGI is single-threaded and does not cache anything. So I also have CGI and WSGI versions that run on a webserver and either serve the files from a path on the local server, or from external URL's.
 
-The CGI_Local_Media branch uses a CGI webserver to serve the program and files, which are assumed to exist on the same server, although they could be on an external server if the filenames are set up according to the pattern.
+The [CGI_Local_Media](https://github.com/aaronchantrill/Frogwatch/tree/cgi_local_media) branch uses a CGI webserver to serve the program and files, which are assumed to exist on the same server, although they could be on an external server if the filenames are set up according to the pattern.
