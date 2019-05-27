@@ -1,1 +1,11 @@
 # Frogwatch
+
+I was tasked to learn the calls of 19 local frog species to participate in a citizen science program called Frogwatch sponsored by the Association of Zoos and Aquariums. The instructors used frog calls and images from a website called the [Virginia Herpetological Society](http://virginiaherpetologicalsociety.com/) to train from. That website included a matching game, but it matched all of the Virginia species, not just the 19 I needed to memorize. So I built my own copy. After a week of playing with this for an hour a day, I passed the frog call test 100% (got lucky on one, as I still have trouble distinguishing the Northern Cricket Frog from the Southern Cricket Frog).
+
+This program could be used to train yourself to recognize any set of audio files, not just frog calls. I imagine bird and insect calls would be especially useful. The original idea for this game actually came from a game I was working on a few years ago matching mockingbird songs to the original birdsongs. The image files are not really necessary. You could replace them all with a title card stating "Image not available" or just remove that whole section.
+
+I am trying to get permission to distribute the image and audio files along with this repository so a complete example can be downloaded. As of yet, I don't have that, so you will have to prepare your own files. I had to re-mix the audio files to remove the name of the species from the beginning, which I used [Audacity](https://www.audacityteam.org/) for. I also had to reformat the images a little using [GNU Image Manipulation Program](https://www.gimp.org). So if you can collect or find the audio and image files you need, you should be able to use this program.
+
+When I first wrote this, I wrote it as a standalone wsgi program that could serve the audio, image and html files without needing an external webserver. This is probably the easiest way to run it, but it is slow since WSGI is single-threaded and does not cache anything. So I also have CGI and WSGI versions that run on a webserver and either serve the files from a path on the local server, or from external URL's.
+
+The CGI_Local_Media branch uses a CGI webserver to serve the program and files, which are assumed to exist on the same server, although they could be on an external server if the filenames are set up according to the pattern.
